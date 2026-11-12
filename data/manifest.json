@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "exams": [
+    {
+      "code": "CCAR-F",
+      "slug": "foundations",
+      "name": "Foundations",
+      "summary": "Agentic loops, tool design and MCP, Claude Code configuration, prompt engineering and context management."
+    },
+    {
+      "code": "CCAR-P",
+      "slug": "professional",
+      "name": "Professional",
+      "summary": "Solution architecture, model selection and cost, RAG, security and compliance, evaluation, and stakeholder decisions."
+    }
+  ],
+  "mocks": [
+    {
+      "id": "foundations-mock-1",
+      "title": "Foundations Mock 1",
+      "exam": "Claude Certified Architect – Foundations",
+      "examCode": "CCAR-F",
+      "questionCount": 60,
+      "durationMinutes": 120,
+      "passingScore": 72,
+      "file": "data/foundations-mock-1.json",
+      "domains": [
+        { "id": "D1", "name": "Agentic Architecture & Orchestration", "weight": 27 },
+        { "id": "D2", "name": "Tool Design & MCP Integration", "weight": 18 },
+        { "id": "D3", "name": "Claude Code Configuration & Workflows", "weight": 20 },
+        { "id": "D4", "name": "Prompt Engineering & Structured Output", "weight": 20 },
+        { "id": "D5", "name": "Context Management & Reliability", "weight": 15 }
+      ]
+    },
+    {
+      "id": "foundations-mock-2",
+      "title": "Foundations Mock 2",
+      "exam": "Claude Certified Architect – Foundations",
+      "examCode": "CCAR-F",
+      "questionCount": 60,
+      "durationMinutes": 120,
+      "passingScore": 72,
+      "file": "data/foundations-mock-2.json",
+      "domains": [
+        { "id": "D1", "name": "Agentic Architecture & Orchestration", "weight": 27 },
+        { "id": "D2", "name": "Tool Design & MCP Integration", "weight": 18 },
+        { "id": "D3", "name": "Claude Code Configuration & Workflows", "weight": 20 },
+        { "id": "D4", "name": "Prompt Engineering & Structured Output", "weight": 20 },
+        { "id": "D5", "name": "Context Management & Reliability", "weight": 15 }
+      ]
+    },
+    {
+      "id": "professional-mock-1",
+      "title": "Professional Mock 1",
+      "exam": "Claude Certified Architect – Professional",
+      "examCode": "CCAR-P",
+      "questionCount": 63,
+      "durationMinutes": 120,
+      "passingScore": 72,
+      "file": "data/professional-mock-1.json",
+      "domains": [
+        { "id": "D1", "name": "Solution Design & Architecture", "weight": 17 },
+        { "id": "D2", "name": "Claude Models, Prompting & Context Engineering", "weight": 13 },
+        { "id": "D3", "name": "Integration", "weight": 19 },
+        { "id": "D4", "name": "Evaluation, Testing & Optimization", "weight": 16 },
+        { "id": "D5", "name": "Governance, Safety & Risk Management", "weight": 14 },
+        { "id": "D6", "name": "Stakeholder Communication & Lifecycle Management", "weight": 14 },
+        { "id": "D7", "name": "Developer Productivity & Operational Enablement", "weight": 7 }
+      ]
+    },
+    {
+      "id": "professional-mock-2",
+      "title": "Professional Mock 2",
+      "exam": "Claude Certified Architect – Professional",
+      "examCode": "CCAR-P",
+      "questionCount": 63,
+      "durationMinutes": 120,
+      "passingScore": 72,
+      "file": "data/professional-mock-2.json",
+      "domains": [
+        { "id": "D1", "name": "Solution Design & Architecture", "weight": 17 },
+        { "id": "D2", "name": "Claude Models, Prompting & Context Engineering", "weight": 13 },
+        { "id": "D3", "name": "Integration", "weight": 19 },
+        { "id": "D4", "name": "Evaluation, Testing & Optimization", "weight": 16 },
+        { "id": "D5", "name": "Governance, Safety & Risk Management", "weight": 14 },
+        { "id": "D6", "name": "Stakeholder Communication & Lifecycle Management", "weight": 14 },
+        { "id": "D7", "name": "Developer Productivity & Operational Enablement", "weight": 7 }
+      ]
+    }
+  ]
+}

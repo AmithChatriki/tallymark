@@ -1,0 +1,17 @@
+# Tallymark has no Python package dependencies.
+#
+# The site is static HTML, CSS and JavaScript with no build step. To run it
+# locally you only need Python 3 (any supported version), because the local
+# server is the standard library's http.server module:
+#
+#     python -m http.server
+#
+# then open http://localhost:8000. A server is needed because browsers block
+# fetch() on file:// pages, so opening index.html directly does not work.
+#
+# The browser loads IBM Plex Sans and IBM Plex Mono from Google Fonts at
+# runtime. Nothing is installed for them, and the page falls back to system
+# fonts if they are blocked.
+#
+# This file is intentionally empty of packages, so
+# `pip install -r requirements.txt` succeeds and installs nothing.

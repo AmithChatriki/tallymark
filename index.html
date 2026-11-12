@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tallymark | Unofficial practice exams for the Claude Certified Architect exams</title>
+  <meta name="description" content="Four free, full-length, timed mock exams for the Claude Certified Architect Foundations and Professional certifications. Original scenario-based questions with an explanation for every option. Unofficial.">
+  <meta name="theme-color" content="#E7E0D1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tallymark">
+  <meta property="og:title" content="Tallymark: unofficial Claude Certified Architect practice exams">
+  <meta property="og:description" content="Four full-length timed mocks (Foundations and Professional) with domain-level reports and explanations for every option. Free, no account, runs in your browser.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    // Apply the saved or system theme before first paint.
+    (function () {
+      var t = null;
+      try { t = JSON.parse(localStorage.getItem('mockexam:v1:theme')); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+
+  <header class="hdr" id="hdr">
+    <a class="brand" href="#/" aria-label="Tallymark home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <line x1="8" y1="8" x2="8" y2="24"/><line x1="13.3" y1="8" x2="13.3" y2="24"/>
+          <line x1="18.6" y1="8" x2="18.6" y2="24"/><line x1="24" y1="8" x2="24" y2="24"/>
+          <line x1="5" y1="21" x2="27" y2="11"/>
+        </g>
+      </svg>
+      <span class="brand-name">Tallymark</span>
+    </a>
+    <div class="hdr-context" id="hdr-context"></div>
+    <div class="hdr-progress" id="hdr-progress" hidden></div>
+    <div class="hdr-timer" id="hdr-timer" hidden>
+      <span class="hdr-timer-label" id="hdr-timer-label">Time left</span>
+      <span class="hdr-timer-value" id="hdr-timer-value" role="timer" aria-live="off">0:00:00</span>
+    </div>
+    <button class="btn btn-quiet" id="pause-btn" type="button" hidden>Pause</button>
+    <button class="btn btn-quiet" id="theme-btn" type="button">Dark</button>
+  </header>
+
+  <div class="bg-fx" aria-hidden="true"><span></span><span></span></div>
+
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <main class="app" id="app" tabindex="-1">
+    <p class="loading">Loading question banks…</p>
+    <noscript><p class="notice notice-error">This site needs JavaScript to run the practice exams.</p></noscript>
+  </main>
+
+  <footer class="ftr">
+    <p>Unofficial practice resource. Not affiliated with or endorsed by Anthropic. Questions are original and are not taken from the real exam.</p>
+  </footer>
+
+  <dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+    <h2 class="dlg-title" id="dlg-title"></h2>
+    <div class="dlg-body" id="dlg-body"></div>
+    <div class="dlg-actions" id="dlg-actions"></div>
+  </dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
