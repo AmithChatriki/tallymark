@@ -49,27 +49,6 @@ python -m http.server
 
 Then open <http://localhost:8000>.
 
-## Deploy
-
-### GitHub Pages
-
-1. Create a new repository on GitHub and push the contents of this folder to the `main` branch, with `index.html` at the repository root.
-2. In the repository, open **Settings**, then **Pages**.
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-4. Choose branch `main` and folder `/ (root)`, then **Save**.
-5. Wait a minute or two. The site URL appears at the top of the Pages settings (`https://<user>.github.io/<repo>/`).
-
-All paths in the site are relative, so it works from a sub-path without changes.
-
-### Netlify (drag and drop)
-
-1. Sign in at <https://app.netlify.com>.
-2. Open **Sites** and find the drop area labelled "Drag and drop your site output folder here" (or go to <https://app.netlify.com/drop>).
-3. Drag this whole folder onto it.
-4. Netlify publishes the site and gives it a URL. Rename it under **Site configuration** if you want.
-
-To update the site later, drag the folder onto the **Deploys** tab of the same site.
-
 ## Pages
 
 | Address | Screen |
@@ -80,10 +59,6 @@ To update the site later, drag the folder onto the **Deploys** tab of the same s
 | `#/report/<id>` | A saved report. "Back" returns to that exam's page |
 
 The chooser is built from the `exams` list in `data/manifest.json`. Each entry has a `code` (matched against each mock's `examCode`), a `slug` (used in the address), a `name` and a one-line `summary`. A mock whose `examCode` has no entry still gets a page, named after its `exam` field.
-
-## Background effect
-
-The chooser and the exam pages have faint contour lines drifting slowly in the background (`.bg-fx` in `index.html`, styled at the end of `css/styles.css`). They are hidden on the question, review and report screens, and stay still for visitors whose device is set to reduce motion. To change the strength, edit `--fx-a` and `--fx-b`; to change the speed, edit the `140s` and `220s` animation durations. To remove the effect, delete the `.bg-fx` element.
 
 ## Question schema
 
