@@ -6,7 +6,7 @@ Free, full-length practice exams for the Claude Certified Architect certificatio
 - 2 mocks for **Claude Certified Architect – Professional** (63 questions, 120 minutes each)
 - Exam mode (timed, no feedback until submission) and Practice mode (check each answer, optional pausable timer)
 - Results report with domain breakdown, focus areas, and an explanation for every option
-- No accounts, no backend, no tracking. Progress and history are stored only in the visitor's browser (`localStorage`).
+- No accounts, no backend, no cookies. Progress and history are stored only in the visitor's browser (`localStorage`). Anonymous visit counts are collected with GoatCounter.
 
 > **Disclaimer.** Unofficial practice resource. Not affiliated with or endorsed by Anthropic. Questions are original and are not taken from the real exam.
 

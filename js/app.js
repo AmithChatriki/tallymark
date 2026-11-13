@@ -463,15 +463,32 @@
       state.attempt = null;
     }
     let view;
+    let trackKey = r.name;
     if (r.name === 'exam') view = viewExam();
     else if (r.name === 'review') view = viewReview();
     else if (r.name === 'report') view = viewReport(r.arg);
     else {
       const exam = r.name !== 'home' && exams().find((e) => e.slug === r.name);
       view = exam ? viewExamHome(exam) : viewHome();
+      if (!exam) trackKey = 'home';
     }
     document.body.classList.toggle('bg-on', !['exam', 'review', 'report'].includes(r.name));
     app.replaceChildren(...[].concat(view));
+    trackView(trackKey);
+  }
+
+  // ---------- Visit counting (GoatCounter, no cookies) ----------
+  // count.js counts the page load itself. This adds one count per screen the visitor moves to
+  // (an exam page, the exam, review, a report), not one per re-render while answering.
+  let lastTracked = 'home';
+  function trackView(key) {
+    if (key === lastTracked) return;
+    try {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({ path: key === 'home' ? '/tallymark/' : '/tallymark/#/' + key, title: document.title, event: false });
+        lastTracked = key;
+      }
+    } catch (e) { /* counting is optional; never break the app */ }
   }
 
   // ---------- Home ----------
@@ -550,7 +567,7 @@
         h('span', null, h('strong', null, mock.meta.title),
           ` in progress · ${attempt.mode === 'exam' ? 'Exam' : 'Practice'} mode · ${answeredCount(mock, attempt)} of ${mock.questions.length} answered`),
         h('button', { type: 'button', class: 'btn btn-primary', onclick: () => resumeAttempt(mock.meta.id) }, 'Resume'))),
-      h('p', { class: 'foot-note' }, 'Your progress is stored only in this browser. There are no accounts and no data leaves your device.'))];
+      h('p', { class: 'foot-note' }, 'Your progress stays in this browser. No accounts, no sign-up.'))];
     return out;
   }
 
