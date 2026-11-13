@@ -524,7 +524,7 @@
 
   function viewHome() {
     paintHeader(h('span', null, 'Practice exams'));
-    document.title = 'Tallymark | Unofficial practice exams for the Claude Certified Architect exams';
+    document.title = 'Claude Certified Architect Mock Exams (Free, Unofficial) | Tallymark';
     const all = [...state.mocks.values()];
     const { inProgress, discarded } = savedAttempts(all);
     const out = [h('div', { class: 'home-wrap' },
@@ -904,8 +904,8 @@
     paintHeader(h('span', null, 'Results'));
     if (!rec) {
       return [h('h1', null, 'Report not found'),
-        h('p', { class: 'muted', style: 'margin-top:8px' }, 'This report is not stored in this browser. It may have been cleared.'),
-        h('p', null, h('a', { href: '#/' }, 'Back to practice exams'))];
+      h('p', { class: 'muted', style: 'margin-top:8px' }, 'This report is not stored in this browser. It may have been cleared.'),
+      h('p', null, h('a', { href: '#/' }, 'Back to practice exams'))];
     }
     const mock = state.mocks.get(rec.mockId);
     const bank = mock && mock.ok ? mock : null;
